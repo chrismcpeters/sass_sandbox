@@ -11,3 +11,68 @@ body {
     font-family: $font-stack;
     line-height: 1.5;
 }
+
+header {
+    background: $dark-color;
+    color: $light-color;
+    padding: 1rem;
+
+    h1 {
+        text-align: center;
+    }
+}
+
+.section {
+    padding: 3rem;
+
+    h3 {
+        font-size: 2rem;
+    }
+
+    &-a {
+        background: $primary-color;
+        color: #fff;
+    }
+
+    &-b {
+        background: $secondary-color;
+        color: #fff;
+    }
+}
+
+// how to use pseudo selectors below
+// a {
+//     color: #333;
+//     &:hover {
+//         color: coral;
+//     }
+// }
+
+%btn-shared {
+    display: inline-block;
+    padding: .7rem 2rem;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    margin-top: 1rem;
+    // &:hover {
+    //     background: coral;
+    //     color: #fff;
+    //     border-radius: 20px;
+    //     transition: all 800ms ease-in-out
+    // }
+}
+
+.btn {
+    &-light {
+       @extend %btn-shared; 
+       background-color: $light-color;
+       color: #333;
+    }
+
+    &-dark {
+       @extend %btn-shared; 
+       background-color: $dark-color;
+       color: #fff;
+    }
+}
